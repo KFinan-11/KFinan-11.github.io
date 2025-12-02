@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Business Analytics & Machine Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a', // Slate 900
+                        secondary: '#334155', // Slate 700
+                        accent: '#2563eb', // Blue 600
+                        'accent-hover': '#1d4ed8', // Blue 700
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo / Name -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary tracking-tight">
+                        <span class="text-accent">&lt;</span>Name<span class="text-accent">/&gt;</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-gray-600 hover:text-accent font-medium transition-colors">About</a>
+                    <a href="#experience" class="text-gray-600 hover:text-accent font-medium transition-colors">Experience</a>
+                    <a href="#projects" class="text-gray-600 hover:text-accent font-medium transition-colors">Projects</a>
+                    <a href="#skills" class="text-gray-600 hover:text-accent font-medium transition-colors">Skills</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-accent text-white rounded-full font-medium hover:bg-accent-hover transition-all shadow-md hover:shadow-lg">Contact Me</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-600 hover:text-accent hover:bg-gray-50 rounded-md">About</a>
+                <a href="#experience" class="block px-3 py-3 text-base font-medium text-gray-600 hover:text-accent hover:bg-gray-50 rounded-md">Experience</a>
+                <a href="#projects" class="block px-3 py-3 text-base font-medium text-gray-600 hover:text-accent hover:bg-gray-50 rounded-md">Projects</a>
+                <a href="#skills" class="block px-3 py-3 text-base font-medium text-gray-600 hover:text-accent hover:bg-gray-50 rounded-md">Skills</a>
+                <a href="#contact" class="block mt-4 px-5 py-3 text-center bg-accent text-white rounded-lg font-medium hover:bg-accent-hover">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Decor -->
+        <div class="absolute top-0 left-0 w-full h-full -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+            <div class="absolute top-[-10%] left-[-5%] w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-32 left-20 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-accent font-semibold tracking-wide uppercase text-sm mb-4">Portfolio</h2>
+            <h1 class="text-5xl md:text-7xl font-bold text-primary mb-6 tracking-tight">
+                Data Driven.<br>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-purple-600">Business Focused.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+                Specializing in Business Analytics and Machine Learning. Transforming complex data into actionable strategic insights.
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#projects" class="px-8 py-3.5 bg-primary text-white rounded-lg font-semibold hover:bg-secondary transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    View My Work
+                </a>
+                <a href="#contact" class="px-8 py-3.5 bg-white text-primary border border-gray-200 rounded-lg font-semibold hover:bg-gray-50 transition-all shadow-sm hover:shadow-md">
+                    Get in Touch
+                </a>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="mt-12 flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-accent text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-black text-2xl transition-colors"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-400 text-2xl transition-colors"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="relative mb-12 lg:mb-0">
+                    <!-- Placeholder for Image -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-200 aspect-[4/5] group">
+                        <!-- Add your image source here -->
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Profile" 
+                             class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="font-bold text-xl">Student & Analyst</p>
+                            <p class="text-gray-200 text-sm">University of Dayton</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">About Me</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        I am a passionate student at the <strong class="text-primary">University of Dayton</strong>, focusing on the intersection of finance, data science, and technology. With a strong foundation in Business Analytics, I help organizations leverage data to make smarter decisions.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        My experience includes equity research, financial modeling, and applying machine learning algorithms to real-world business problems. I thrive in collaborative environments where innovation and analytical rigor are valued.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <i class="fas fa-chart-line text-accent text-2xl mb-3"></i>
+                            <h3 class="font-bold text-gray-900">Analytics</h3>
+                            <p class="text-sm text-gray-500">Transforming raw data into insights.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <i class="fas fa-code text-accent text-2xl mb-3"></i>
+                            <h3 class="font-bold text-gray-900">Development</h3>
+                            <p class="text-sm text-gray-500">Building robust ML models.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary">Work Experience</h2>
+                <p class="mt-4 text-gray-500">My professional journey and contributions.</p>
+            </div>
+
+            <div class="relative border-l-2 border-gray-200 ml-3 md:ml-6 space-y-12">
+                
+                <!-- Job 1 (Inferred from context) -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[9px] top-0 h-5 w-5 rounded-full border-4 border-white bg-accent"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-gray-900">Junior Analyst / Analyst</h3>
+                        <span class="text-sm font-medium text-gray-500 bg-white px-3 py-1 rounded-full border border-gray-200 shadow-sm mt-2 sm:mt-0 w-fit">2023 - Present</span>
+                    </div>
+                    <div class="text-accent font-medium mb-4">Hanley Sustainability Fund</div>
+                    <p class="text-gray-600 mb-4 max-w-3xl">
+                        A student-run equity portfolio managing over $4.5M in assets.
+                    </p>
+                    <ul class="list-disc list-outside ml-5 text-gray-600 space-y-2 max-w-3xl">
+                        <li>Conducted top-down analysis to identify ESG-focused equities that outperform the market.</li>
+                        <li>Performed comprehensive valuation using DCF models and relative valuation multiples.</li>
+                        <li>Collaborated with sector teams to pitch buy/sell recommendations to the investment committee.</li>
+                        <li>Utilized Bloomberg Terminal and FactSet for financial data retrieval and analysis.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 2 (Placeholder) -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[9px] top-0 h-5 w-5 rounded-full border-4 border-white bg-gray-300"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-gray-900">Business Analytics Intern</h3>
+                        <span class="text-sm font-medium text-gray-500 bg-white px-3 py-1 rounded-full border border-gray-200 shadow-sm mt-2 sm:mt-0 w-fit">Summer 2023</span>
+                    </div>
+                    <div class="text-gray-600 font-medium mb-4">Company Name (Placeholder)</div>
+                    <p class="text-gray-600 mb-4 max-w-3xl">
+                        Assisted the data team in analyzing customer behavior trends.
+                    </p>
+                    <ul class="list-disc list-outside ml-5 text-gray-600 space-y-2 max-w-3xl">
+                        <li>Cleaned and preprocessed large datasets using Python and SQL.</li>
+                        <li>Created interactive dashboards in Tableau to visualize key performance indicators.</li>
+                        <li>Automated weekly reporting processes, saving the team 5 hours per week.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary">Featured Projects</h2>
+                <p class="mt-4 text-gray-500">A selection of my academic and personal work.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: IDCC Pitch -->
+                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl transition-shadow group">
+                    <div class="h-48 bg-gray-100 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-900 to-slate-900 flex items-center justify-center">
+                            <i class="fas fa-chart-pie text-white/80 text-5xl transform group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">InterDigital (IDCC) Equity Pitch</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            A comprehensive buy recommendation for InterDigital, Inc. Analyzed the company's patent portfolio, 5G market penetration, and financial health. Built a DCF model projecting a 34% upside in the bull case.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded">Valuation</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded">Financial Modeling</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded">Excel</span>
+                        </div>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-hover inline-flex items-center">
+                            View Case Study <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: ML Project (Placeholder) -->
+                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl transition-shadow group">
+                    <div class="h-48 bg-gray-100 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-800 to-teal-900 flex items-center justify-center">
+                            <i class="fas fa-robot text-white/80 text-5xl transform group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Customer Churn Prediction</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            Developed a machine learning model to predict customer churn for a telecom dataset. Utilized Random Forest and XGBoost classifiers, achieving an accuracy of 92%. Performed feature engineering to identify key churn drivers.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded">Python</span>
+                            <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded">Scikit-Learn</span>
+                            <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded">ML</span>
+                        </div>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-hover inline-flex items-center">
+                            View Code <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Data Viz (Placeholder) -->
+                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl transition-shadow group">
+                    <div class="h-48 bg-gray-100 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-800 to-indigo-900 flex items-center justify-center">
+                            <i class="fas fa-database text-white/80 text-5xl transform group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">ESG Sentiment Analysis</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            Scraped thousands of financial news articles to analyze sentiment regarding ESG initiatives. Used Natural Language Processing (NLP) techniques to correlate positive sentiment with stock performance.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded">NLP</span>
+                            <span class="px-2 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded">Python</span>
+                            <span class="px-2 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded">Tableau</span>
+                        </div>
+                        <a href="#" class="text-accent font-semibold hover:text-accent-hover inline-flex items-center">
+                            View Dashboard <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">Technical Skills</h2>
+                <p class="mt-4 text-gray-400">Tools and technologies I use to drive value.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6 bg-secondary/30 rounded-xl backdrop-blur-sm border border-gray-700 hover:border-accent transition-colors">
+                    <i class="fab fa-python text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="font-bold">Python</h3>
+                    <p class="text-xs text-gray-400 mt-2">Pandas, NumPy, Scikit-Learn</p>
+                </div>
+                <div class="p-6 bg-secondary/30 rounded-xl backdrop-blur-sm border border-gray-700 hover:border-accent transition-colors">
+                    <i class="fas fa-database text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="font-bold">SQL</h3>
+                    <p class="text-xs text-gray-400 mt-2">Querying & Database Management</p>
+                </div>
+                <div class="p-6 bg-secondary/30 rounded-xl backdrop-blur-sm border border-gray-700 hover:border-accent transition-colors">
+                    <i class="fas fa-chart-bar text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="font-bold">Tableau / PowerBI</h3>
+                    <p class="text-xs text-gray-400 mt-2">Data Visualization & Dashboards</p>
+                </div>
+                <div class="p-6 bg-secondary/30 rounded-xl backdrop-blur-sm border border-gray-700 hover:border-accent transition-colors">
+                    <i class="fas fa-file-excel text-4xl text-green-500 mb-4"></i>
+                    <h3 class="font-bold">Financial Modeling</h3>
+                    <p class="text-xs text-gray-400 mt-2">DCF, Comps, Excel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-primary mb-6">Let's Connect</h2>
+            <p class="text-gray-600 mb-10">
+                I am currently looking for full-time opportunities in Business Analytics and Data Science. 
+                Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            </p>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                <form onsubmit="event.preventDefault(); window.location.href='mailto:your.email@example.com';" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Name" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:bg-white focus:outline-none transition-colors">
+                        <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:bg-white focus:outline-none transition-colors">
+                    </div>
+                    <textarea rows="4" placeholder="Message" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-accent focus:bg-white focus:outline-none transition-colors"></textarea>
+                    <button type="submit" class="w-full py-4 bg-accent text-white font-bold rounded-lg hover:bg-accent-hover transition-colors shadow-lg">
+                        Send Message
+                    </button>
+                </form>
+                
+                <div class="mt-8 pt-8 border-t border-gray-100 flex justify-center space-x-8">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-envelope mr-3 text-accent"></i>
+                        <span>your.email@example.com</span>
+                    </div>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-map-marker-alt mr-3 text-accent"></i>
+                        <span>Dayton, OH</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Sticky Navbar effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
